@@ -170,6 +170,24 @@ Set the proper locale information:
 # locale-gen
 ```
 
+**Desktop options**
+
+Set the timezone and enable NTP:
+
+```
+# ls -l /usr/share/zoneinfo/America
+# timedatectl set-timezone US/Central
+# timedatectl set-ntp true
+```
+
+Enable Networking and Bluetooth:
+
+```
+# systemctl NetworkManager enable
+# pacman -S bluez bluez-utils
+# systemctl bluetooth enable
+```
+
 
 **Prepare for System Reboot**
 
