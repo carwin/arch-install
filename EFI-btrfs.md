@@ -21,7 +21,7 @@ Use the regular installer through the network setup... or...
 
 **Initial Steps and Hard Drive Setup**
 ```
-# pacman -Sy gptfdisk btrfs-progs
+# pacman -Sy gptfdisk btrfs-progs glibc
 ```
 
 ```
@@ -39,7 +39,7 @@ For the rest of the document, pay attention to partitions. This guide utilizes t
 #!/bin/sh
 
 mkfs.vfat -F 32 /dev/sda1
-mkfs.btrfs -L Arch /dev/sda2
+mkfs.btrfs -L Arch --force /dev/sda2
 mkdir /btrfs
 mount -o defaults,noatime /dev/sda2 /btrfs
 btrfs sub create /btrfs/__active
